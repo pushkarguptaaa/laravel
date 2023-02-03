@@ -28,4 +28,14 @@ class Listing extends Model
     public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
+
+    // Accessor
+    public function getCompanyAttribute($value){
+        return ucFirst($value);
+    }
+
+    // Mutator
+    // public function setLocationAttribute($value){
+    //     $this->attributes['location'] = $value . ' India';
+    // }
 }
